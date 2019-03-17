@@ -1,0 +1,10 @@
+body {
+    background: var(--color-white) url('../images/layout/bg.svg') no-repeat;
+    background-size: 80%;
+    font-family: var(--font-family-default);
+}
+
+.container {
+    max-width: var(--max-container-width);
+    margin: 0 auto;
+}

@@ -1,0 +1,11 @@
+:root {
+    /* Colours */
+    --color-black: #000;
+    --color-white: #fff;
+
+    /* Layout */
+    --max-container-width: 1200px;
+
+    /* Fonts */
+    --font-family-default: 'Open Sans', sans-serif;
+}
