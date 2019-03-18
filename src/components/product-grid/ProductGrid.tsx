@@ -17,8 +17,8 @@ const ProductGrid = (props: PropsInterface) => {
         const max = 10;
         const min = 0;
 
-        return props.basket.map((product) => {
-            let qtyInBag = product.qtyInBag;
+        const updatedBasket = props.basket.map((product) => {
+            const qtyInBag = product.qtyInBag;
             if (product.sku === sku) {
                 if (actionType === 'INCREMENT' && qtyInBag < max) {
                     product.qtyInBag = qtyInBag + 1;
@@ -28,25 +28,10 @@ const ProductGrid = (props: PropsInterface) => {
             }
             return product;
         });
+
+        props.updateBasket(updatedBasket);
     };
 
-    /**
-     * Handles the quantity change.
-     * @param actionType
-     * @param sku
-     */
-    const handleQtyChange = (actionType: string, sku:number) => {
-        switch (actionType) {
-            case 'INCREMENT': {
-                props.updateBasket(updateQty(actionType, sku));
-                break;
-            }
-            case 'DECREMENT': {
-                props.updateBasket(updateQty(actionType, sku));
-                break;
-            }
-        }
-    };
 
     return (
         <table>
@@ -69,9 +54,9 @@ const ProductGrid = (props: PropsInterface) => {
                             </td>
 
                             <td className={`${styles.column} ${styles.quantity}`}>
-                                <span onClick={() => handleQtyChange('INCREMENT', product.sku)}>+</span>
+                                <span onClick={() => updateQty('INCREMENT', product.sku)}>+</span>
                                 <input type="text" value={product.qtyInBag} readOnly />
-                                <span onClick={() => handleQtyChange('DECREMENT', product.sku)}>-</span>
+                                <span onClick={() => updateQty('DECREMENT', product.sku)}>-</span>
                             </td>
 
                             <td className={`${styles.column} ${styles.actions}`}>
