@@ -5,3 +5,7 @@
 .step {
     width: 120px;
 }
+
+.isActive {
+    background: var(--color-black);
+}

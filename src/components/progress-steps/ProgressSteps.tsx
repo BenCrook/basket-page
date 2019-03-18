@@ -27,7 +27,9 @@ const steps: StepsInterface[] = [
 
 const renderSteps = () => {
     return steps.map((step) => {
-        return <div key={step.title} className={styles.step}>
+        const activeClass = step.active ? styles.isActive : '';
+
+        return <div key={step.title} className={`${styles.step} ${activeClass}`}>
             {step.title}
         </div>
     })
