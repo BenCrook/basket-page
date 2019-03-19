@@ -10,6 +10,7 @@ const successfulCheckout = (basket: BasketContentsInterface[]) => {
     console.log('You have successfully checked out!');
 };
 
+// todo: Reduce width of the page title as it's overlapping other elements
 const App = () => {
     const [basket, updateBasket] = useState(initialBasket);
     const basketIsPopulated = basket.length;
@@ -23,8 +24,9 @@ const App = () => {
     );
 
     return (
-        <div>
+        <div className="container">
             <ProgressSteps />
+            <h1 className="page-title">My Basket</h1>
             {basketIsPopulated ?  populatedBasket: emptyBasket}
         </div>
     )

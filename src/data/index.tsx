@@ -1,4 +1,6 @@
 import { BasketContentsInterface } from '../types'
+import img1 from '../images/products/product-img-1.png';
+import img2 from '../images/products/product-img-2.png';
 
 export const currencySymbol: string = '\u00A3'; // £
 export const taxRate: number = 0.2; // 20%
@@ -13,7 +15,7 @@ export const initialBasket: BasketContentsInterface[] = [
         specialPrice: null,
         sku: 123,
         images: [
-
+            img1
         ]
     },
     {
@@ -25,7 +27,7 @@ export const initialBasket: BasketContentsInterface[] = [
         specialPrice: 34.00,
         sku: 321,
         images: [
-
+            img2
         ]
     }
 ];

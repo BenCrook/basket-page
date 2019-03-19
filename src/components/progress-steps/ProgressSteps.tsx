@@ -25,18 +25,21 @@ const steps: StepsInterface[] = [
  * It has been split into a separate function to keep the markup clean.
  */
 const renderSteps = () => {
-    return steps.map((step) => {
+    return steps.map((step, index) => {
         const activeClass = step.active ? styles.isActive : '';
 
-        return <div key={step.title} className={`${styles.step} ${activeClass}`}>
-            {step.title}
-        </div>
+        return (
+            <div key={step.title} className={`${styles.step} ${activeClass}`}>
+                <div className={styles.icon}>{index + 1}</div>
+                <div className={styles.title}>{step.title}</div>
+            </div>
+        )
     })
 };
 
 const ProgressSteps = () => {
     return (
-        <div className={`container ${styles.stepContainer}`}>
+        <div className={styles.stepContainer}>
             {renderSteps()}
         </div>
     )

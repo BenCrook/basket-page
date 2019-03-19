@@ -5,7 +5,7 @@ export interface ProductInterface {
     qty: number,
     specialPrice: number | null,
     sku: number,
-    images: object[]
+    images: string[]
 }
 
 export interface BasketContentsInterface extends ProductInterface {

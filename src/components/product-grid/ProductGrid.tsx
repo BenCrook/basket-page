@@ -1,6 +1,7 @@
 import React from 'react';
 import { BasketContentsInterface } from '../../types';
 import ProductRow from './ProductRow';
+import styles from './product-grid.module.css';
 
 interface PropsInterface {
     basket: BasketContentsInterface[]
@@ -54,7 +55,7 @@ const ProductGrid = (props: PropsInterface) => {
     };
 
     return (
-        <table>
+        <table className={styles.table}>
             <tbody>
             <tr>
                 <th>Product</th>

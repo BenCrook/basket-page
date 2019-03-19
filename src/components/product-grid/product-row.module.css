@@ -7,11 +7,21 @@
 }
 
 .column {
-
+    padding-top: 57px;
+    vertical-align: top;
 }
 
 .productInfo {
+    display: flex;
+    align-items: flex-start;
+}
 
+.images {
+    margin-right: 20px;
+    margin-top: -12px;
+}
+
+.name {
 }
 
 .pricing {

@@ -23,8 +23,11 @@ const ProductRow = (props: PropsInterface) => {
     return (
         <tr>
             <td className={`${styles.column} ${styles.productInfo}`}>
-                <div>{product.name}</div>
-                <div>{product.qty ? 'in Stock' : 'Out of stock'}</div>
+                <div className={styles.images}><img src={product.images[0]} alt=""/></div>
+                <div className={styles.name}>
+                    <div>{product.name}</div>
+                    <div>{product.qty ? 'in Stock' : 'Out of stock'}</div>
+                </div>
             </td>
 
             <td className={`${styles.column} ${styles.pricing}`}>

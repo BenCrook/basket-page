@@ -1,6 +1,6 @@
 import React from 'react';
 import { BasketContentsInterface } from '../../types';
-import { taxRate } from '../../data';
+import { currencySymbol, taxRate } from '../../data';
 
 interface PropsInterface {
     basket: BasketContentsInterface[]
@@ -26,15 +26,15 @@ const Totals = (props: PropsInterface) => {
         <div>
             <div>
                 <span>Subtotal</span>
-                <span>{subtotal}</span>
+                <span>{currencySymbol + subtotal.toFixed(2)}</span>
             </div>
             <div>
                 <span>Tax</span>
-                <span>{tax}</span>
+                <span>{currencySymbol + tax.toFixed(2)}</span>
             </div>
             <div>
                 <span>Total</span>
-                <span>{total}</span>
+                <span>{currencySymbol + total.toFixed(2)}</span>
             </div>
         </div>
     )
