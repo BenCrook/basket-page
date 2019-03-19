@@ -1,9 +1,13 @@
 :root {
-    /* Colours */
+    /* Black -> white shites*/
     --color-black: #000;
-    --color-white: #fff;
-    --color-red: #D0021B;
+    --color-gray: #B7B8BE;
     --color-light-gray: #D8D8D8;
+    --color-white: #fff;
+
+    /* Colours */
+    --color-green: #D6FFEA;
+    --color-red: #D0021B;
 
     /* Layout */
     --max-container-width: 1200px;

@@ -21,31 +21,35 @@ const ProductRow = (props: PropsInterface) => {
     const productPrice = product.specialPrice ? product.specialPrice : product.price;
 
     return (
-        <tr>
-            <td className={`${styles.column} ${styles.productInfo}`}>
-                <div className={styles.images}><img src={product.images[0]} alt=""/></div>
-                <div className={styles.name}>
-                    <div>{product.name}</div>
-                    <div>{product.qty ? 'in Stock' : 'Out of stock'}</div>
+        <div className={styles.row}>
+            <div className={`${styles.column} ${styles.product}`}>
+                <div className={styles.image}>
+                    <img src={product.images[0]} alt={product.name}/>
                 </div>
-            </td>
+                <div>
+                    <div className={styles.name}>{product.name}</div>
+                    <div className={styles.inStock}>{product.qty ? 'In Stock' : 'Out of stock'}</div>
+                </div>
+            </div>
 
-            <td className={`${styles.column} ${styles.pricing}`}>
+            <div className={`${styles.column} ${styles.price}`}>
                 <Price price={product.price} specialPrice={product.specialPrice}/>
-            </td>
+            </div>
 
-            <td className={`${styles.column} ${styles.quantity}`}>
-                <span onClick={() => props.updateQty('DECREMENT', product)}>-</span>
-                <input type="text" value={product.qtyInBag} readOnly />
-                <span onClick={() => props.updateQty('INCREMENT', product)}>+</span>
-                <div onClick={() => props.removeItem(product.sku)}>Remove</div>
+            <div className={`${styles.column} ${styles.quantity}`}>
+                <div className={styles.quantityWrapper}>
+                    <span className={styles.quantityIcon} onClick={() => props.updateQty('DECREMENT', product)}>–</span>
+                    <input className={styles.quantityInput} type="text" value={product.qtyInBag} readOnly />
+                    <span className={styles.quantityIcon} onClick={() => props.updateQty('INCREMENT', product)}>+</span>
+                </div>
+                <div className={styles.remove} onClick={() => props.removeItem(product.sku)}>Remove</div>
                 <QuantityMessaging qtyInBag={product.qtyInBag} max={product.max}/>
-            </td>
+            </div>
 
-            <td className={`${styles.column} ${styles.actions}`}>
+            <div className={`${styles.column} ${styles.subtotal}`}>
                 {currencySymbol + (productPrice * product.qtyInBag).toFixed(2)}
-            </td>
-        </tr>
+            </div>
+        </div>
     )
 };
 

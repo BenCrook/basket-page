@@ -1,37 +1,78 @@
-.grid {
-
-}
-
-.headings {
-
+.row {
+    display: flex;
 }
 
 .column {
-    padding-top: 57px;
-    vertical-align: top;
+    padding-top: 56px;
 }
 
-.productInfo {
+.product {
     display: flex;
-    align-items: flex-start;
-}
-
-.images {
-    margin-right: 20px;
-    margin-top: -12px;
+    width: 60%;
 }
 
 .name {
+    max-width: 250px;
 }
 
-.pricing {
+.inStock {
+    background: var(--color-green);
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 0 7px;
+    width: auto;
+}
 
+.price,
+.quantity {
+    text-align: center;
+}
+
+.price {
+    width: 10%;
 }
 
 .quantity {
-
+    padding-top: 37px;
+    text-align: center;
+    width: 20%;
 }
 
-.actions {
+.subtotal {
+    text-align: right;
+    width: 10%;
+}
 
+.image {
+    margin: -10px 20px 0 0;
+}
+
+.quantityWrapper {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.quantityInput {
+    border: 1px solid var(--color-light-gray);
+    display: block;
+    height: 60px;
+    margin: 0 3px;
+    text-align: center;
+    width: 70px;
+}
+
+.quantityIcon {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 21px;
+    padding: 9px 17px;
+}
+
+.remove {
+    border-bottom: 1px solid var(--color-black);
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 23px;
 }

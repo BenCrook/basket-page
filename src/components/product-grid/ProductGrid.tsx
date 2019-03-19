@@ -55,19 +55,19 @@ const ProductGrid = (props: PropsInterface) => {
     };
 
     return (
-        <table className={styles.table}>
-            <tbody>
-            <tr>
-                <th>Product</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Subtotal</th>
-            </tr>
-            {props.basket.map((product) => {
-                return <ProductRow key={product.sku} product={product} updateQty={updateQty} removeItem={removeItem}/>
-            })}
-            </tbody>
-        </table>
+        <div>
+            <div className={styles.header}>
+                <div className={styles.product}>Product</div>
+                <div className={styles.price}>Price</div>
+                <div className={styles.quantity}>Quantity</div>
+                <div className={styles.subtotal}>Subtotal</div>
+            </div>
+            <div className="content">
+                {props.basket.map((product) => {
+                    return <ProductRow key={product.sku} product={product} updateQty={updateQty} removeItem={removeItem}/>
+                })}
+            </div>
+        </div>
     )
 };
 
