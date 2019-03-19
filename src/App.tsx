@@ -5,11 +5,15 @@ import { basketContents } from "./data";
 
 const App = () => {
     const [basket, updateBasket] = useState(basketContents);
+    const basketIsPopulated = basket.length;
+    const emptyBasketMessage = <div>Your basket is empty.</div>;
 
     return (
         <div>
             <ProgressSteps />
-            <ProductGrid basket={basket} updateBasket={updateBasket} />
+            {basketIsPopulated ?
+                <ProductGrid basket={basket} updateBasket={updateBasket} /> : emptyBasketMessage}
+            <button disabled={!basket.length} onClick={() => console.log(basket)}>Checkout</button>
         </div>
     )
 };

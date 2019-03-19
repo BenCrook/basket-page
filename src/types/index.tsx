@@ -1,4 +1,5 @@
 export interface ProductInterface {
+    max: number,
     name: string,
     price: number,
     qty: number,
