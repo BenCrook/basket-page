@@ -1,5 +1,7 @@
 import { BasketContentsInterface, ProductInterface } from '../types'
 
+export const currencySymbol:string = '\u00A3';
+
 export const products: ProductInterface[] = [
     {
         name: "Oversized grandpa's cool jumper in brown and red",

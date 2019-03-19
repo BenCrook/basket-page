@@ -13,5 +13,5 @@ export interface BasketContentsInterface extends ProductInterface {
 
 export interface PriceInterface {
     price: number,
-    specialPrice?: number
+    specialPrice?: number | null
 }

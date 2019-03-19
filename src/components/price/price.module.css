@@ -1,0 +1,7 @@
+.specialPrice {
+    color: var(--color-red);
+}
+
+.oldPrice {
+    text-decoration: line-through;
+}
