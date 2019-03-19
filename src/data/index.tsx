@@ -27,7 +27,7 @@ export const products: ProductInterface[] = [
     }
 ];
 
-export const basketContents: BasketContentsInterface[] = [
+export const initialBasket: BasketContentsInterface[] = [
     {
         max: 10,
         name: "Oversized grandpa's cool jumper in brown and red",

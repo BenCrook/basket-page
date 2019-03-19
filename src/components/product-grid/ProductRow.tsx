@@ -13,11 +13,13 @@ interface PropsInterface {
 
 const ProductRow = (props: PropsInterface) => {
     const product = props.product;
+    const productPrice = product.specialPrice ? product.specialPrice : product.price;
 
     return (
         <tr>
             <td className={`${styles.column} ${styles.productInfo}`}>
-                {product.name}
+                <div>{product.name}</div>
+                <div>{product.qty ? 'in Stock' : 'Out of stock'}</div>
             </td>
 
             <td className={`${styles.column} ${styles.pricing}`}>
@@ -33,7 +35,7 @@ const ProductRow = (props: PropsInterface) => {
             </td>
 
             <td className={`${styles.column} ${styles.actions}`}>
-                {currencySymbol + (product.price * product.qtyInBag).toFixed(2)}
+                {currencySymbol + (productPrice * product.qtyInBag).toFixed(2)}
             </td>
         </tr>
     )
