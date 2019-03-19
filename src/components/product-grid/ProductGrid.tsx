@@ -1,15 +1,25 @@
 import React from 'react';
-import {BasketContentsInterface, ProductInterface} from "../../types";
-import ProductRow from "./ProductRow";
+import { BasketContentsInterface } from '../../types';
+import ProductRow from './ProductRow';
 
 interface PropsInterface {
     basket: BasketContentsInterface[]
     updateBasket: Function
 }
 
-// todo: Lift updateQty functions up into App.js and consider using reducers
+/**
+ * Product grid, responsible for rendering products in a table. Typically used in basket page and checkout.
+ * todo: Lift updateQty functions up into App.js and consider using a reducer hook (useReducer)
+ * @param props
+ * @constructor
+ */
 const ProductGrid = (props: PropsInterface) => {
-    const updateQty = (actionType: string, product: ProductInterface) => {
+    /**
+     * Updates the quantity based on the specified action.
+     * @param actionType
+     * @param product
+     */
+    const updateQty = (actionType: string, product: BasketContentsInterface) => {
         const updatedBasket = props.basket.map((loopedProduct) => {
             const skusMatch = loopedProduct.sku === product.sku;
             const qtyInBag = loopedProduct.qtyInBag;
@@ -31,7 +41,7 @@ const ProductGrid = (props: PropsInterface) => {
 
     /**
      * Removes an item from the basket, uses filter to avoid directly editing state.
-     * @param sku - The product's SKU, used to update the relevant product.
+     * @param sku
      */
     const removeItem = (sku: number) => {
         const updatedBasket = props.basket.filter((product) => {

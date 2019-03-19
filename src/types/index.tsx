@@ -16,3 +16,9 @@ export interface PriceInterface {
     price: number,
     specialPrice?: number | null
 }
+
+export interface StepsInterface {
+    active: boolean,
+    complete: boolean,
+    title: string
+}

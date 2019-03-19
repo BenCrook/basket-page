@@ -1,10 +1,16 @@
 import React from 'react';
-import { BasketContentsInterface } from "../../types";
+import { BasketContentsInterface } from '../../types';
+import { taxRate } from '../../data';
 
 interface PropsInterface {
     basket: BasketContentsInterface[]
 }
 
+/**
+ * Responsible for rendering totals, displays subtotal, tax, and grand total.
+ * @param props
+ * @constructor
+ */
 const Totals = (props: PropsInterface) => {
     let subtotal = 0;
 
@@ -13,7 +19,7 @@ const Totals = (props: PropsInterface) => {
         subtotal = subtotal + (productPrice * product.qtyInBag);
     });
 
-    const tax = (subtotal * 0.2);
+    const tax = (subtotal * taxRate);
     const total = (subtotal + tax);
 
     return (

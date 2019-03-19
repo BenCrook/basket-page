@@ -1,11 +1,6 @@
 import React from 'react';
 import styles from './progress-steps.module.css';
-
-interface StepsInterface {
-    active: boolean,
-    complete: boolean,
-    title: string
-}
+import { StepsInterface } from '../../types';
 
 const steps: StepsInterface[] = [
     {
@@ -25,6 +20,10 @@ const steps: StepsInterface[] = [
     }
 ];
 
+/**
+ * Responsible for rendering the progress steps.
+ * It has been split into a separate function to keep the markup clean.
+ */
 const renderSteps = () => {
     return steps.map((step) => {
         const activeClass = step.active ? styles.isActive : '';

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import ProductGrid from "./components/product-grid/ProductGrid";
-import ProgressSteps from "./components/progress-steps/ProgressSteps";
-import { initialBasket } from "./data";
-import Totals from "./components/totals/Totals";
-import { BasketContentsInterface } from "./types";
+import ProductGrid from './components/product-grid/ProductGrid';
+import ProgressSteps from './components/progress-steps/ProgressSteps';
+import { initialBasket } from './data';
+import Totals from './components/totals/Totals';
+import { BasketContentsInterface } from './types';
 
 const successfulCheckout = (basket: BasketContentsInterface[]) => {
     console.log(basket);

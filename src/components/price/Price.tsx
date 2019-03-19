@@ -1,8 +1,14 @@
 import React from 'react';
 import { PriceInterface } from '../../types';
 import styles from './price.module.css';
-import { currencySymbol } from "../../data";
+import { currencySymbol } from '../../data';
 
+/**
+ * Price component, responsible for rendering product prices.
+ * Will use specialPrice if set, else it will use the standard price.
+ * @param props
+ * @constructor
+ */
 const Price = (props: PriceInterface) => {
     return (
         <div>

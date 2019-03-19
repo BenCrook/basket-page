@@ -1,8 +1,8 @@
 import React from 'react';
-import Price from "../price/Price";
-import QuantityMessaging from "./QuantityMessages";
-import { currencySymbol } from "../../data";
-import { BasketContentsInterface } from "../../types";
+import Price from '../price/Price';
+import QuantityMessaging from './QuantityMessages';
+import { currencySymbol } from '../../data';
+import { BasketContentsInterface } from '../../types';
 import styles from './product-row.module.css';
 
 interface PropsInterface {
@@ -11,6 +11,11 @@ interface PropsInterface {
     removeItem: Function
 }
 
+/**
+ * A table row to be rendered inside the ProductGrid component.
+ * @param props
+ * @constructor
+ */
 const ProductRow = (props: PropsInterface) => {
     const product = props.product;
     const productPrice = product.specialPrice ? product.specialPrice : product.price;
