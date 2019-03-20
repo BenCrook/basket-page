@@ -23,9 +23,11 @@
 }
 
 .step {
+    font-size: 14px;
     text-align: center;
     text-transform: uppercase;
-    width: 120px;
+    max-width: 120px;
+    width: 33.3333%;
 }
 
 .icon {
@@ -51,5 +53,11 @@
 .title {
     height: 26px;
     margin-top: 12px;
-    width: 120px;
+    max-width: 120px;
+}
+
+@media (min-width: 480px) {
+    .step {
+        font-size: 16px;
+    }
 }

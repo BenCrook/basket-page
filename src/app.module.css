@@ -1,0 +1,28 @@
+.continue {
+    display: none;
+    float: left;
+    margin-top: 20px;
+}
+
+.totals {
+    display: block;
+    margin-top: 22px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .continue {
+        display: block;
+        min-width: 300px;
+    }
+
+    .totals {
+        text-align: right;
+    }
+
+    .total {
+        display: inline-block;
+        float: right;
+        margin-top: 50px;
+    }
+}

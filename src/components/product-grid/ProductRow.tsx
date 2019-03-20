@@ -1,8 +1,8 @@
 import React from 'react';
 import Price from '../price/Price';
 import QuantityMessaging from './QuantityMessages';
-import { currencySymbol } from '../../data';
-import { BasketContentsInterface } from '../../types';
+import {currencySymbol} from '../../data';
+import {BasketContentsInterface} from '../../types';
 import styles from './product-row.module.css';
 
 interface PropsInterface {
@@ -20,6 +20,19 @@ const ProductRow = (props: PropsInterface) => {
     const product = props.product;
     const productPrice = product.specialPrice ? product.specialPrice : product.price;
 
+    const QuantityEditor = () => {
+        return (
+            <>
+                <div className={styles.quantityWrapper}>
+                    <span className={styles.quantityIcon} onClick={() => props.updateQty('DECREMENT', product)}>–</span>
+                    <input className={styles.quantityInput} type="text" value={product.qtyInBag} readOnly/>
+                    <span className={styles.quantityIcon} onClick={() => props.updateQty('INCREMENT', product)}>+</span>
+                </div>
+                <div className={styles.remove} onClick={() => props.removeItem(product.sku)}>Remove</div>
+            </>
+        )
+    };
+
     return (
         <div className={styles.row}>
             <div className={`${styles.column} ${styles.product}`}>
@@ -28,7 +41,13 @@ const ProductRow = (props: PropsInterface) => {
                 </div>
                 <div>
                     <div className={styles.name}>{product.name}</div>
+                    <div className={styles.mobilePrice}>
+                        <Price price={product.price} specialPrice={product.specialPrice}/>
+                    </div>
                     <div className={styles.inStock}>{product.qty ? 'In Stock' : 'Out of stock'}</div>
+                </div>
+                <div className={styles.mobileQuantity}>
+                    <QuantityEditor/>
                 </div>
             </div>
 
@@ -37,12 +56,7 @@ const ProductRow = (props: PropsInterface) => {
             </div>
 
             <div className={`${styles.column} ${styles.quantity}`}>
-                <div className={styles.quantityWrapper}>
-                    <span className={styles.quantityIcon} onClick={() => props.updateQty('DECREMENT', product)}>–</span>
-                    <input className={styles.quantityInput} type="text" value={product.qtyInBag} readOnly />
-                    <span className={styles.quantityIcon} onClick={() => props.updateQty('INCREMENT', product)}>+</span>
-                </div>
-                <div className={styles.remove} onClick={() => props.removeItem(product.sku)}>Remove</div>
+                <QuantityEditor/>
                 <QuantityMessaging qtyInBag={product.qtyInBag} max={product.max}/>
             </div>
 

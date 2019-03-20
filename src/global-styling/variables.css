@@ -1,17 +1,25 @@
 :root {
     /* Black -> white shites*/
     --color-black: #000;
+    --color-dark-gray: #767779;
     --color-gray: #B7B8BE;
     --color-light-gray: #D8D8D8;
+    --color-lighter-gray: #EAEAEA;
     --color-white: #fff;
 
     /* Colours */
     --color-green: #D6FFEA;
     --color-red: #D0021B;
+    --color-pink: #FFD7D7;
+    --color-blue: #ADE1F3;
 
     /* Layout */
     --max-container-width: 1200px;
 
     /* Fonts */
     --font-family-default: 'Open Sans', sans-serif;
+
+    /* Animations */
+    --default-transition-time: 0.2s;
+    --default-transition-mode: ease-in;
 }

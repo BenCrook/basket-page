@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import ProductGrid from './components/product-grid/ProductGrid';
 import ProgressSteps from './components/progress-steps/ProgressSteps';
-import { initialBasket } from './data';
+import {initialBasket} from './data';
 import Totals from './components/totals/Totals';
-import { BasketContentsInterface } from './types';
+import {BasketContentsInterface} from './types';
+import styles from './app.module.css';
 
 const successfulCheckout = (basket: BasketContentsInterface[]) => {
     console.log(basket);
@@ -17,17 +18,26 @@ const App = () => {
     const emptyBasket = <div>Your basket is empty.</div>;
     const populatedBasket = (
         <>
-            <ProductGrid basket={basket} updateBasket={updateBasket} />
-            <Totals basket={basket} />
-            <button disabled={!basket.length} onClick={() => successfulCheckout(basket)}>Checkout</button>
+            <ProductGrid basket={basket} updateBasket={updateBasket}/>
+            <div>
+                <button className={styles.continue}>Continue Shopping</button>
+                <span className={styles.totals}>
+                    <Totals basket={basket}/>
+                    <button className="primary large"
+                            disabled={!basket.length}
+                            onClick={() => successfulCheckout(basket)}>
+                        Checkout Securely
+                    </button>
+                </span>
+            </div>
         </>
     );
 
     return (
         <div className="container">
-            <ProgressSteps />
+            <ProgressSteps/>
             <h1 className="page-title">My Basket</h1>
-            {basketIsPopulated ?  populatedBasket: emptyBasket}
+            {basketIsPopulated ? populatedBasket : emptyBasket}
         </div>
     )
 };

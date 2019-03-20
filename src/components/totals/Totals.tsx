@@ -1,10 +1,19 @@
 import React from 'react';
 import { BasketContentsInterface } from '../../types';
 import { currencySymbol, taxRate } from '../../data';
+import styles from './totals.module.css';
 
 interface PropsInterface {
     basket: BasketContentsInterface[]
 }
+
+/**
+ * Transform a number to use the local formatting system e.g 1000 -> 1,000.
+ * @param numberToTransform
+ */
+const transformNumberForLocale = (numberToTransform: number) => {
+    return numberToTransform.toLocaleString(undefined, { minimumFractionDigits: 2 })
+};
 
 /**
  * Responsible for rendering totals, displays subtotal, tax, and grand total.
@@ -19,22 +28,22 @@ const Totals = (props: PropsInterface) => {
         subtotal = subtotal + (productPrice * product.qtyInBag);
     });
 
-    const tax = (subtotal * taxRate);
-    const total = (subtotal + tax);
+    const tax = subtotal * taxRate;
+    const total = subtotal + tax;
 
     return (
-        <div>
-            <div>
+        <div className={styles.totals}>
+            <div className={`${styles.row} ${styles.subtotal}`}>
                 <span>Subtotal</span>
-                <span>{currencySymbol + subtotal.toFixed(2)}</span>
+                <span>{currencySymbol + transformNumberForLocale(subtotal)}</span>
             </div>
-            <div>
-                <span>Tax</span>
-                <span>{currencySymbol + tax.toFixed(2)}</span>
+            <div className={`${styles.row} ${styles.vat}`}>
+                <span>VAT</span>
+                <span>{currencySymbol + transformNumberForLocale(tax)}</span>
             </div>
-            <div>
-                <span>Total</span>
-                <span>{currencySymbol + total.toFixed(2)}</span>
+            <div className={styles.row}>
+                <span>Total excluding delivery</span>
+                <span className={styles.total}>{currencySymbol + transformNumberForLocale(total)}</span>
             </div>
         </div>
     )

@@ -1,18 +1,53 @@
 .row {
-    display: flex;
+    border-bottom: 1px solid var(--color-light-gray);
+    padding-bottom: 22px;
 }
 
 .column {
-    padding-top: 56px;
+    padding-top: 30px;
 }
 
 .product {
-    display: flex;
-    width: 60%;
+    text-align: center;
+    width: 100%;
+}
+
+.price {
+    display: none;
+    width: 10%;
+}
+
+.quantity {
+    display: none;
+    padding-top: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.mobileQuantity {
+    padding-top: 15px;
+    text-align: center;
+}
+
+.subtotal {
+    display: none;
+    text-align: right;
+    width: 10%;
+}
+
+.image {
+    margin: 0 auto;
+    min-width: 200px;
+    width: 200px;
+}
+
+.mobilePrice {
+    font-weight: bold;
+    padding-top: 5px;
 }
 
 .name {
-    max-width: 250px;
+    padding-right: 10px;
 }
 
 .inStock {
@@ -29,25 +64,6 @@
     text-align: center;
 }
 
-.price {
-    width: 10%;
-}
-
-.quantity {
-    padding-top: 37px;
-    text-align: center;
-    width: 20%;
-}
-
-.subtotal {
-    text-align: right;
-    width: 10%;
-}
-
-.image {
-    margin: -10px 20px 0 0;
-}
-
 .quantityWrapper {
     align-items: center;
     display: flex;
@@ -57,10 +73,10 @@
 .quantityInput {
     border: 1px solid var(--color-light-gray);
     display: block;
-    height: 60px;
+    height: 40px;
     margin: 0 3px;
     text-align: center;
-    width: 70px;
+    width: 40px;
 }
 
 .quantityIcon {
@@ -74,5 +90,73 @@
     border-bottom: 1px solid var(--color-black);
     cursor: pointer;
     display: inline-block;
-    margin-top: 23px;
+    margin-top: 10px;
+}
+
+@media (min-width: 630px) {
+    .row {
+        display: flex;
+    }
+
+    .product {
+        display: flex;
+        text-align: left;
+    }
+
+    .name {
+        max-width: 250px;
+    }
+
+    .image {
+        margin: 0 20px 0 0;
+    }
+
+    .quantity {
+        display: block;
+        padding-top: 30px;
+        width: 30%;
+    }
+
+    .mobileQuantity {
+        display: none;
+    }
+
+    .quantityInput {
+        height: 60px;
+        width: 70px;
+    }
+
+    .remove {
+        margin-top: 23px;
+    }
+}
+
+@media (min-width: 900px) {
+    .column {
+        padding-top: 56px;
+    }
+
+    .product {
+        width: 60%;
+    }
+
+    .price {
+        display: block;
+    }
+
+    .quantity {
+        padding-top: 37px;
+    }
+
+    .subtotal {
+        display: block;
+    }
+
+    .image {
+        margin-top: -10px;
+    }
+
+    .mobilePrice {
+        display: none;
+    }
 }
