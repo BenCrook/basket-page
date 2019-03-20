@@ -7,7 +7,7 @@ Compiled code is in the `/build` directory.
 2. Access the URL and you should see the app.
 
 ## How To View (using Create React App)
-Providing you have Node, NPM, and Yarn installed the below should 'just work'.
+Providing you have Node, NPM, and Yarn installed the below should 'just work'. If you don't have Yarn but do have Node/NPM replace the yarn command with `npm install -g serve`.
 
 1. From the root of this project run `npm install && npm run build && yarn global add serve && serve -s build`
 2. Navigate to [http://localhost:5000](http://localhost:5000) (or whatever URL the CLI tool returns)
