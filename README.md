@@ -55,6 +55,7 @@ I’m a big fan of CSS modules as the scoped CSS really helps avoid increasing t
 * Empty basket message needs styling
 * Keep VAT and subtotal on mobile else users may get confused why the product price * quantity doesn’t match the total.
 * Optimise images
+* Consider adding a message when the user clicks on the minus symbol when the quantity is set to 1
 
 ## Notes 
 Special price is set to null when there is no special price set as I feel this is more likely to represent what would get pulled in from the DB.
