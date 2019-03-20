@@ -3,11 +3,12 @@
 Compiled code is in the `/build` directory.
 
 ## How To View (not using Create React App)
-1. Start a server (such as [indexzero/http-server](https://github.com/indexzero/http-server)) in the `/build` directory
-2. Access the localhost URL and you should see the app.
+1. Start your server of choice (e.g [indexzero/http-server](https://github.com/indexzero/http-server) or [zeit/serve](https://github.com/zeit/serve)) in the `/build` directory
+2. Access the URL and you should see the app.
 
 ## How To View (using Create React App)
 Providing you have Node, NPM, and Yarn installed the below should 'just work'.
+
 1. From the root of this project run `npm install && npm run build && yarn global add serve && serve -s build`
 2. Navigate to [http://localhost:5000](http://localhost:5000) (or whatever URL the CLI tool returns)
 
