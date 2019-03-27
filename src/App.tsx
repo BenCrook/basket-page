@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import ProductGrid from './components/product-grid/ProductGrid';
+import ProductTable from './components/product-table/ProductTable';
 import ProgressSteps from './components/progress-steps/ProgressSteps';
 import {initialBasket} from './data';
 import Totals from './components/totals/Totals';
@@ -18,7 +18,7 @@ const App = () => {
     const emptyBasket = <div>Your basket is empty.</div>;
     const populatedBasket = (
         <>
-            <ProductGrid basket={basket} updateBasket={updateBasket}/>
+            <ProductTable basket={basket} updateBasket={updateBasket}/>
             <div>
                 <button className={styles.continue}>Continue Shopping</button>
                 <span className={styles.totals}>
