@@ -24,22 +24,9 @@ I chose to use React as it makes building and managing the UI and state much eas
 
 I’m a big fan of CSS modules as the scoped CSS really helps avoid increasing the specificity and makes naming selectors a breeze.
 
-
-## Exclusions - Things I have ignored from the design
-* Quantity input is using the Gotham font and a different colour, and weight I presume it isn’t intentional
-* I didn’t use an image for the + and - as I think it’s better to use + and - text to save downloading 2 images
-* Header border doesn’t overlap as per the design, not sure if this was intention. 
-
-## Incomplete - I ran out of time before completing these
-* The progress step shapes, I would try and create these shapes in CSS and failing that use an SVG.
-* Remove link hover effect, would likely use pseudo elements to achieve this
-* Price promise and returns boxes, I would likely use pseudo elements to create the borders and animate the border position with transform: translate() as it performs better than animating top/right/bottom/left.
-* Phone number message
+## Improvements
 * Style the message that displays when the user adds 10 products to bag
-* Fully browser and device test it. I typically use Browserstack and iOS simulator for this.
 * Remove unused classes/selectors
-
-## Improvements 
 * Improved responsiveness
 * Sticky checkout button on mobile
 * React specific

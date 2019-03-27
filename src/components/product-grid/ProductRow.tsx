@@ -1,7 +1,7 @@
 import React from 'react';
 import Price from '../price/Price';
 import QuantityMessaging from './QuantityMessages';
-import {currencySymbol} from '../../data';
+import { currencySymbol } from '../../data';
 import {BasketContentsInterface} from '../../types';
 import styles from './product-row.module.css';
 
