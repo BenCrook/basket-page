@@ -25,6 +25,8 @@ I chose to use React as it makes building and managing the UI and state much eas
 I’m a big fan of CSS modules as the scoped CSS really helps avoid increasing the specificity and makes naming selectors a breeze.
 
 ## Improvements
+* Optimisations:
+  * On the basket page changing the quantity results in several renders
 * Style the message that displays when the user adds 10 products to bag
 * Remove unused classes/selectors
 * Improved responsiveness
@@ -43,6 +45,7 @@ I’m a big fan of CSS modules as the scoped CSS really helps avoid increasing t
 * Keep VAT and subtotal on mobile else users may get confused why the product price * quantity doesn’t match the total.
 * Optimise images
 * Consider adding a message when the user clicks on the minus symbol when the quantity is set to 1
+* Reduce width of the page title as it's overlapping other elements
 
 ## Notes 
 Special price is set to null when there is no special price set as I feel this is more likely to represent what would get pulled in from the DB.

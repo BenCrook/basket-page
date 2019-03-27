@@ -45,4 +45,4 @@ const ProgressSteps = () => {
     )
 };
 
-export default ProgressSteps;
+export default React.memo(ProgressSteps);
