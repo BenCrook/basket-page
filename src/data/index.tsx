@@ -104,7 +104,7 @@ export const initialBasket: BasketContentsInterface[] = [
         qty: 15,
         qtyInBag: 1,
         specialPrice: null,
-        sku: 123,
+        sku: 12345,
         images: [
             img1
         ]
@@ -114,9 +114,9 @@ export const initialBasket: BasketContentsInterface[] = [
         name: "Merry Christmas jumper in bright blue" ,
         price: 39.00,
         qty: 42,
-        qtyInBag: 2,
-        specialPrice: 34.00,
-        sku: 321,
+        qtyInBag: 3,
+        specialPrice: 34.99,
+        sku: 12346,
         images: [
             img2
         ]

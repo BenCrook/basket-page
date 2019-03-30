@@ -2,6 +2,7 @@ import React from 'react';
 import { ProductInterface } from '../../types';
 import Price from '../price/Price';
 import styles from './product-listing.module.css';
+import Button from '../button/Button';
 
 interface PropsInterface {
     products: ProductInterface[]
@@ -19,6 +20,9 @@ const ProductListing = (props: PropsInterface) => (
                     <div className={styles.price}>
                         <Price price={product.price} specialPrice={product.specialPrice} />
                     </div>
+                </div>
+                <div>
+                    <Button>Add to Basket</Button>
                 </div>
             </div>
         ))}
