@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BasketContentsInterface } from '../../types';
 import ProductRow from './ProductRow';
 import styles from './product-table.module.css';
+import { BasketContext } from '../../context/basket';
 
 interface PropsInterface {
     basket: BasketContentsInterface[]
-    updateBasket: Function
 }
 
 /**
@@ -15,13 +15,15 @@ interface PropsInterface {
  * @constructor
  */
 const ProductTable = (props: PropsInterface) => {
+    const {basket, updateBasket} = useContext(BasketContext);
+
     /**
      * Updates the quantity based on the specified action.
      * @param actionType
      * @param product
      */
     const updateQty = (actionType: string, product: BasketContentsInterface) => {
-        const updatedBasket = props.basket.map((loopedProduct) => {
+        const updatedBasket = basket.map((loopedProduct) => {
             const skusMatch = loopedProduct.sku === product.sku;
             const qtyInBag = loopedProduct.qtyInBag;
             const canIncrement = qtyInBag < product.max;
@@ -37,7 +39,7 @@ const ProductTable = (props: PropsInterface) => {
             return loopedProduct;
         });
 
-        props.updateBasket(updatedBasket);
+        updateBasket(updatedBasket);
     };
 
     /**
@@ -51,7 +53,7 @@ const ProductTable = (props: PropsInterface) => {
             }
         });
 
-        props.updateBasket(updatedBasket);
+        updateBasket(updatedBasket);
     };
 
     return (

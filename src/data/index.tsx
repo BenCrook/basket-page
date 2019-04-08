@@ -30,7 +30,7 @@ export const products: ProductInterface[] = [
     },
     {
         max: 10,
-        name: "Merry Christmas jumper in bright blue" ,
+        name: "Another Jumper" ,
         price: 399.99,
         qty: 42,
         specialPrice: null,
@@ -41,7 +41,7 @@ export const products: ProductInterface[] = [
     },
     {
         max: 10,
-        name: "Merry Christmas jumper in bright blue" ,
+        name: "Yet Another Jumper" ,
         price: 19.99,
         qty: 42,
         specialPrice: null,
@@ -52,7 +52,7 @@ export const products: ProductInterface[] = [
     },
     {
         max: 10,
-        name: "Merry Christmas jumper in bright blue" ,
+        name: "Blue Fleece" ,
         price: 44.99,
         qty: 42,
         specialPrice: 39.75,
@@ -63,7 +63,7 @@ export const products: ProductInterface[] = [
     },
     {
         max: 10,
-        name: "Merry Christmas jumper in bright blue" ,
+        name: "Purple Hat" ,
         price: 39.99,
         qty: 42,
         specialPrice: 34.99,
@@ -74,7 +74,7 @@ export const products: ProductInterface[] = [
     },
     {
         max: 10,
-        name: "Merry Christmas jumper in bright blue" ,
+        name: "1990 Trainers" ,
         price: 99.49,
         qty: 42,
         specialPrice: null,
@@ -85,7 +85,7 @@ export const products: ProductInterface[] = [
     },
     {
         max: 10,
-        name: "Merry Christmas jumper in bright blue" ,
+        name: "Gray Pants" ,
         price: 37.50,
         qty: 42,
         specialPrice: null,
@@ -96,29 +96,4 @@ export const products: ProductInterface[] = [
     }
 ];
 
-export const initialBasket: BasketContentsInterface[] = [
-    {
-        max: 10,
-        name: "Oversized grandpa's cool jumper in brown and red",
-        price: 1878.00,
-        qty: 15,
-        qtyInBag: 1,
-        specialPrice: null,
-        sku: 12345,
-        images: [
-            img1
-        ]
-    },
-    {
-        max: 10,
-        name: "Merry Christmas jumper in bright blue" ,
-        price: 39.00,
-        qty: 42,
-        qtyInBag: 3,
-        specialPrice: 34.99,
-        sku: 12346,
-        images: [
-            img2
-        ]
-    }
-];
+export const initialBasket: BasketContentsInterface[] = [];
