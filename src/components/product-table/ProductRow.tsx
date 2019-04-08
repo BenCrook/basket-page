@@ -12,7 +12,7 @@ interface PropsInterface {
 }
 
 /**
- * A table row to be rendered inside the ProductGrid component.
+ * A table row to be rendered inside the ProductTable component.
  * @param props
  * @constructor
  */

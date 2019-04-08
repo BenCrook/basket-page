@@ -25,4 +25,4 @@ const Price = (props: PriceInterface) => {
     )
 };
 
-export default Price;
+export default React.memo(Price);

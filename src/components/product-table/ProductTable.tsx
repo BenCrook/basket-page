@@ -1,27 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BasketContentsInterface } from '../../types';
 import ProductRow from './ProductRow';
-import styles from './product-grid.module.css';
+import styles from './product-table.module.css';
+import { BasketContext } from '../../context/basket';
 
 interface PropsInterface {
     basket: BasketContentsInterface[]
-    updateBasket: Function
 }
 
 /**
- * Product grid, responsible for rendering products in a table. Typically used in basket page and checkout.
+ * Product table, responsible for rendering products in a table. Typically used in basket page and checkout.
  * todo: Lift updateQty functions up into App.js and consider using a reducer hook (useReducer)
  * @param props
  * @constructor
  */
-const ProductGrid = (props: PropsInterface) => {
+const ProductTable = (props: PropsInterface) => {
+    const {basket, updateBasket} = useContext(BasketContext);
+
     /**
      * Updates the quantity based on the specified action.
      * @param actionType
      * @param product
      */
     const updateQty = (actionType: string, product: BasketContentsInterface) => {
-        const updatedBasket = props.basket.map((loopedProduct) => {
+        const updatedBasket = basket.map((loopedProduct) => {
             const skusMatch = loopedProduct.sku === product.sku;
             const qtyInBag = loopedProduct.qtyInBag;
             const canIncrement = qtyInBag < product.max;
@@ -37,7 +39,7 @@ const ProductGrid = (props: PropsInterface) => {
             return loopedProduct;
         });
 
-        props.updateBasket(updatedBasket);
+        updateBasket(updatedBasket);
     };
 
     /**
@@ -51,7 +53,7 @@ const ProductGrid = (props: PropsInterface) => {
             }
         });
 
-        props.updateBasket(updatedBasket);
+        updateBasket(updatedBasket);
     };
 
     return (
@@ -71,4 +73,4 @@ const ProductGrid = (props: PropsInterface) => {
     )
 };
 
-export default ProductGrid;
+export default ProductTable;

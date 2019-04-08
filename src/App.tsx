@@ -1,44 +1,30 @@
-import React, {useState} from 'react';
-import ProductGrid from './components/product-grid/ProductGrid';
-import ProgressSteps from './components/progress-steps/ProgressSteps';
-import {initialBasket} from './data';
-import Totals from './components/totals/Totals';
-import {BasketContentsInterface} from './types';
-import styles from './app.module.css';
+import React, { useContext, useEffect, useState } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Basket from './routes/Basket';
+import ProductListing from './routes/ProductListing';
+import Header from './components/header/Header';
+import { initialBasket } from './data';
+import { BasketContext } from './context/basket';
 
-const successfulCheckout = (basket: BasketContentsInterface[]) => {
-    console.log(basket);
-    console.log('You have successfully checked out!');
-};
-
-// todo: Reduce width of the page title as it's overlapping other elements
+// todo: Make add to basket/update basket functions re-usable
 const App = () => {
     const [basket, updateBasket] = useState(initialBasket);
-    const basketIsPopulated = basket.length;
-    const emptyBasket = <div>Your basket is empty.</div>;
-    const populatedBasket = (
-        <>
-            <ProductGrid basket={basket} updateBasket={updateBasket}/>
-            <div>
-                <button className={styles.continue}>Continue Shopping</button>
-                <span className={styles.totals}>
-                    <Totals basket={basket}/>
-                    <button className="primary large"
-                            disabled={!basket.length}
-                            onClick={() => successfulCheckout(basket)}>
-                        Checkout Securely
-                    </button>
-                </span>
-            </div>
-        </>
-    );
+
+    useEffect(() => {
+        console.log(basket);
+    }, [basket]);
 
     return (
-        <div className="container">
-            <ProgressSteps/>
-            <h1 className="page-title">My Basket</h1>
-            {basketIsPopulated ? populatedBasket : emptyBasket}
-        </div>
-    )
+        <BrowserRouter>
+            <>
+                <BasketContext.Provider value={{basket, updateBasket}}>
+                    <Header />
+                    <Route path="/" component={ProductListing} exact={true} />
+                    <Route path="/basket" component={Basket} exact={true} />
+                </BasketContext.Provider>
+            </>
+        </BrowserRouter>
+    );
 };
+
 export default App;

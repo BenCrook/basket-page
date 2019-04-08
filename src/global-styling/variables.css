@@ -1,5 +1,9 @@
 :root {
-    /* Black -> white shites*/
+    /* Branding */
+    --color-primary: var(--color-blue);
+    --color-secondary: var(--color-pink);
+
+    /* Black -> white shades */
     --color-black: #000;
     --color-dark-gray: #767779;
     --color-gray: #B7B8BE;
